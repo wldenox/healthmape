@@ -1,0 +1,63 @@
+/* styles/globals.css */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.search-bar {
+  width: 400px; /* Увеличиваем ширину поля поиска */
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.filters {
+  margin-bottom: 20px;
+}
+
+.doctors-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.doctor-card {
+  background-color: #f9f9f9; /* Светлый фон */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.doctor-card:hover {
+  transform: scale(1.05); /* Легкое увеличение при наведении */
+}
+
+.doctor-card img {
+  width: 100%; /* Изображение растягивается на всю ширину карточки */
+  height: auto; /* Сохраняем пропорции */
+  max-width: 500px; /* Ограничиваем максимальный размер изображения */
+  border-radius: 50%; /* Закругленные углы для изображения */
+  object-fit: cover; /* Избегаем искажений */
+  margin-bottom: 500px;
+}
+
+.appointment-button {
+  background-color: #ff5a5f;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
