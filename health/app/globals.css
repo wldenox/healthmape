@@ -1,63 +1,82 @@
-/* styles/globals.css */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-  font-family: Arial, sans-serif;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
 }
 
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
+@media screen and (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
-.search-bar {
-  width: 400px; /* Увеличиваем ширину поля поиска */
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
+@layer base {
+  :root {
+    --foreground: 20 14.3% 4.1%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 20 14.3% 4.1%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 14.3% 4.1%;
+
+    --primary: 22 100% 50%;
+    --primary-foreground: 60 9.1% 97.8%;
+
+    --secondary: 32 100% 98%;
+    --secondary-foreground: 24 9.8% 10%;
+
+    --muted: 60 4.8% 95.9%;
+    --muted-foreground: 25 5.3% 44.7%;
+
+    --accent: 60 4.8% 95.9%;
+    --accent-foreground: 24 9.8% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 60 9.1% 97.8%;
+
+    --border: 20 5.9% 90%;
+    --input: 0 0% 90%;
+    --ring: 24.6 95% 53.1%;
+    --radius: 1rem;
+  }
 }
 
-.filters {
-  margin-bottom: 20px;
+* {
+  font-family: var(--font-nunito), sans-serif;
 }
 
-.doctors-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+.scrollbar::-webkit-scrollbar {
+  width: 4px;
 }
 
-.doctor-card {
-  background-color: #f9f9f9; /* Светлый фон */
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  transition: transform 0.3s ease;
+.scrollbar::-webkit-scrollbar-track {
+  border-radius: 6px;
+  background: #fff;
 }
 
-.doctor-card:hover {
-  transform: scale(1.05); /* Легкое увеличение при наведении */
+.scrollbar::-webkit-scrollbar-thumb {
+  background: #dbdadd;
+  border-radius: 6px;
 }
 
-.doctor-card img {
-  width: 100%; /* Изображение растягивается на всю ширину карточки */
-  height: auto; /* Сохраняем пропорции */
-  max-width: 500px; /* Ограничиваем максимальный размер изображения */
-  border-radius: 50%; /* Закругленные углы для изображения */
-  object-fit: cover; /* Избегаем искажений */
-  margin-bottom: 500px;
+.scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #dbdadd;
 }
 
-.appointment-button {
-  background-color: #ff5a5f;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
 }
 
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
