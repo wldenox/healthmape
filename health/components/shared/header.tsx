@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import { Button } from "../ui/button";
 import { ArrowRight, ShoppingCart, User } from "lucide-react";
+import { SearchInput } from "../ui/search-input";
 
 interface Props{
     classname?: string;
@@ -20,6 +21,10 @@ export const Header: React.FC<Props> = ({ classname }) => {
                     <h1 className="text-2xl uppercase font">HealthMap</h1>
                     <p className="text-sm text-gray-400 leading-3">Всегда на стреме</p>
                 </div>
+            </div>
+
+            <div className="mx-10 flex-1">
+            <SearchInput />
             </div>
 
             <div className="flex items-center gap-3">
