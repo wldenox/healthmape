@@ -1,24 +1,13 @@
-import type { Metadata } from "next";
-import { Nunito } from "next/font/google"
-import localFont from "next/font/local";
-import "./globals.css";
-import { Header } from "@/components/shared/header";
+import { Nunito } from 'next/font/google';
 
-const NunitoSans = localFont({
-  src: "./fonts/Nunito-Bold.ttf",
-  variable: '--font-nunito',
-  weight: "400 900",
-});
-const NunitoMono = localFont({
-  src: "./fonts/Nunito-Medium.ttf",
-  variable: '--font-nunito',
-  weight: "400 900",
-});
+import './globals.css';
+import { Providers } from '@/shared/components/shared/providers';
 
-export const metadata: Metadata = {
-  title: "HealthMap",
-  description: "Make by Sigurd Freyr",
-};
+const nunito = Nunito({
+  subsets: ['cyrillic'],
+  variable: '--font-nunito',
+  weight: ['400', '500', '600', '700', '800', '900'],
+});
 
 export default function RootLayout({
   children,
@@ -27,14 +16,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${NunitoSans.variable} ${NunitoMono.variable} antialiased`}
-      >
-        <main className="min-h-screen">
-          <Header></Header>
-          {children}
-          
-          </main>
+      <head>
+        <link data-rh="true" rel="icon" href="/logo.png" />
+      </head>
+      <body className={nunito.className}>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

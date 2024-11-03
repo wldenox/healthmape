@@ -33,7 +33,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "data/doctorsData.js"
+    "@types/*.d.ts"
   ],
   "exclude": [
     "node_modules"
